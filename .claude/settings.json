@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rojo *)",
+      "Bash(selene *)",
+      "Bash(luau-lsp *)",
+      "Bash(stylua *)",
+      "Bash(lune *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(python3 .claude/skills/forging-3d-asset/scripts/*)",
+      "Bash(bash scripts/verify_luau.sh*)",
+      "Bash(bash scripts/verify_setup.sh*)",
+      "Bash(bash .claude/skills/verifying-roblox-apis/scripts/scan_deprecated_apis.sh*)",
+      "Bash(bash .claude/skills/syncing-documentation/scripts/verify_docs_coverage.sh*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/verify_luau.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[PreCompact Snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)] Re-read docs/specs/pipeline_state.md and docs/specs/current_task.md immediately after compaction.\" >> docs/specs/pipeline_state.md"
+          }
+        ]
+      }
+    ]
+  }
+}

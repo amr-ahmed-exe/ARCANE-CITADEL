@@ -1,0 +1,1 @@
+IDLE — Milestones 1-5 implemented in src/ (50 modules). Orchestration scaffold installed 2026-10-15. Suggested next task: `/building-feature "Add --- Luau-LSP docstrings to all src/ modules"` to reach 100% docs coverage.

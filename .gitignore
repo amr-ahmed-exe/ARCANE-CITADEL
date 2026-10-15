@@ -1,0 +1,16 @@
+# Rojo build output
+*.rbxl
+*.rbxlx
+*.rbxm
+!assets/ui/*.rbxm
+sourcemap.json
+
+# Wally packages (restored via `wally install`)
+Packages/
+server-packages/
+dev-packages/
+
+# Logs / OS
+*.log
+Thumbs.db
+Desktop.ini

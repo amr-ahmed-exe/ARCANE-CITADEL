@@ -1,0 +1,7 @@
+std = "roblox"
+
+[rules]
+multiple_statements = "allow"
+shadowing = "deny"
+unused_variable = "deny"
+unscoped_variables = "deny"
